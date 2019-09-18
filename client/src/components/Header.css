@@ -1,0 +1,38 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #5b3427;
+  /* padding: 2em; */
+  margin-bottom: 2em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+nav > li {
+  list-style: none;
+  color: #fff;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+nav > * {
+  padding: 1em;
+}
+
+nav > li > * {
+  text-transform: uppercase;
+}
+nav > li > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav > li > button {
+  border: none;
+  background: transparent;
+  padding: 0;
+}

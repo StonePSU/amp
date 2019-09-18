@@ -1,0 +1,13 @@
+.list-header {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+.list-header-item {
+  color: gray;
+  font-weight: 300;
+  flex-basis: 200px;
+}

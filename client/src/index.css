@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7f5f5;
+  margin: 0;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+input,
+select {
+  font-size: 1em;
+  font-family: "Varela Round";
+  font-weight: 300;
+  border: 1px solid #d2d2d2;
+  display: block;
+}
+
+label {
+  font-family: "Varela Round";
+  font-weight: 300;
+}
+
+hr {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1.5em;
+}
+
+.page-instruction {
+  font-weight: 400;
+  color: #5b3427;
+}
+
+.control {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  position: relative;
+}
+
+.control > input,
+.control > select {
+  height: 50px;
+  display: block;
+  padding-left: 0.3em;
+  padding-top: 0.5em;
+  width: 100%;
+}
+
+.control-label {
+  color: #a9a9a9;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.control > input:focus + .control-label,
+.control > input:valid + .control-label {
+  font-size: 0.7em;
+  top: 10px;
+}
+
+.page-title {
+  color: #575653;
+  border-bottom: 1px solid gray;
+  padding-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.content-title {
+  color: #575653;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.content-container {
+  width: 80%;
+  margin: 0 auto 2em auto;
+}
+
+.content-detail {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px lightgray;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 100%;
+}
+
+.content-detail.narrow {
+  width: 50%;
+}
+
+.content-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5em;
+}
+.content-detail-label {
+  color: gray;
+  font-weight: 300;
+  flex-basis: 30%;
+}
+
+.content-detail-value {
+  font-weight: 300;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+  grid-gap: 1.5em;
+  grid-template-areas:
+    "main widget"
+    "main widget"
+    "main widget";
+}
+
+.main {
+  grid-area: main;
+}
+
+.field-error,
+.page-error {
+  background-color: red;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.2em;
+  text-align: center;
+}
+
+.field-error {
+  float: left;
+}
+
+.field-error.small {
+  font-size: 0.7em;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  height: 50px;
+  letter-spacing: 2px;
+  margin-top: 2em;
+  margin-right: 2em;
+  width: 150px;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.btn-orange-outline {
+  border: 2px solid #f1b348;
+  background-color: #fff;
+}
+
+.btn-orange {
+  background-color: #f1be48;
+}
+
+.btn:hover {
+  background-color: #f1be48;
+}
+
+.nav-dropdown-button {
+  background-color: #5b3427;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.nav-dropdown {
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropdown-child {
+  background-color: #e7ceb5;
+  border: 1px solid #5b3427;
+  border-top: none;
+  position: absolute;
+  top: 65.6px;
+  left: -25px;
+  display: none;
+  min-width: 200px;
+}
+
+.nav-dropdown-child a {
+  color: #5b3427;
+  display: block;
+  margin: 0.2em 0;
+  padding: 10px 25px;
+  text-decoration: none;
+}
+
+.nav-dropdown:hover,
+.nav-dropdown:hover > * {
+  background-color: #e7ceb5;
+  color: #5b3427;
+}
+
+.nav-dropdown:hover .nav-dropdown-child {
+  display: block;
+}
+
+.widget {
+  min-height: 200px;
+}
+
+.counter-widget-total {
+  font-size: 2em;
+}
+
+.counter-widget-p {
+  font-size: 0.8em;
+}
+
+.flex-row {
+  /* background: yellow; */
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex-row a {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.flex-row > * {
+  margin: 10px;
+}
+
+.flex-50 {
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+
+.file-upload {
+  width: 300px;
+  height: 200px;
+  border: 2px dashed gray;
+  margin: auto;
+}
+
+.file-upload p {
+  padding-left: 2em;
+}
+
+.big {
+  font-size: 1.5rem;
+  text-transform: none;
+}
