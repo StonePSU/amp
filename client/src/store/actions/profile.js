@@ -28,3 +28,21 @@ export function getProfile() {
     });
   };
 }
+
+export function updateProfile(profile) {
+  return (dispatch) => {
+    return new Promise(function (resolve, reject) {
+      dispatch(setLoading(1));
+      restAPICall('put', `/api/users/${profile._id}`, profile)
+        .then(res => {
+          dispatch(setLoading(0));
+          resolve(res);
+        })
+        .catch(err => {
+          dispatch(setLoading(0));
+          reject(err);
+        })
+    })
+  }
+
+}

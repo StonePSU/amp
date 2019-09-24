@@ -5,22 +5,21 @@ import ImageUpload from "./ImageUpload";
 import { SubmitButton, ButtonOutlined } from "./Buttons";
 import { FloatingLabelInput } from "./FormFields/FormFields";
 
-export default ({ profile, handleChange }) => {
-
+export default ({ profile, handleChange, handleAddressChange }) => {
   return (
     <ContentDetail>
       <ContentTitle classList="big">{`${profile.firstName} ${
         profile.lastName
         }`}</ContentTitle>
       <hr />
-      <form name="profile" action="">
-        <div>
-          <h2>Profile & Contact Information</h2>
-          <div className="flex-row">
-            <div className="flex-50">
-              {/* <ImageUpload /> */}
-            </div>
-            <div className="flex-50">
+      <div>
+        <h2>Profile & Contact Information</h2>
+        <div className="flex-row">
+          <div className="flex-50">
+            {/* <ImageUpload /> */}
+          </div>
+          <div className="flex-50">
+            <form name="profile" action="" onSubmit={handleAddressChange}>
               <FloatingLabelInput
                 type="text"
                 name="addressLine1"
@@ -62,17 +61,20 @@ export default ({ profile, handleChange }) => {
                 value={profile.emailAddress}
                 handleChange={handleChange}
               />
-            </div>
+              <SubmitButton buttonText="Save" />
+            </form>
           </div>
         </div>
-        <div className="flex-row">
-          <div className="flex-50">
-            <hr />
-            <h2>Password</h2>
-            <p>
-              Choose a password that's hard to guess and unique for this
-              account.
+      </div>
+      <div className="flex-row">
+        <div className="flex-50">
+          <hr />
+          <h2>Password</h2>
+          <p>
+            Choose a password that's hard to guess and unique for this
+            account.
             </p>
+          <form action="" >
             <FloatingLabelInput
               type="password"
               name="currentPassword"
@@ -97,15 +99,18 @@ export default ({ profile, handleChange }) => {
               value={profile.confirmPassword}
               onChange={handleChange}
             />
-          </div>
-          <div className="flex-50">
-            <hr />
-            <h2>Security Questions</h2>
-            <p>
-              These security questions will help us make sure it's your account
-              if you ever need to reset your password.
+            <SubmitButton buttonText="Save" />
+          </form>
+        </div>
+        <div className="flex-50">
+          <hr />
+          <h2>Security Questions</h2>
+          <p>
+            These security questions will help us make sure it's your account
+            if you ever need to reset your password.
             </p>
-            <p>Security Question 1</p>
+          <p>Security Question 1</p>
+          <form action="">
             <div className="control">
               <select name="question1">
                 <option value="Mother's Maiden Name">
@@ -139,16 +144,17 @@ export default ({ profile, handleChange }) => {
               required
               label="Answer"
             />
-          </div>
-        </div>
-        <div className="flex-row">
-          <div className="flex-50">
             <SubmitButton buttonText="Save" />
-            <ButtonOutlined buttonText="Cancel" />
-            <ButtonOutlined buttonText="Delete" />
-          </div>
+          </form>
         </div>
-      </form>
+      </div>
+      <div className="flex-row">
+        <div className="flex-50">
+
+          <ButtonOutlined buttonText="Cancel" />
+          <ButtonOutlined buttonText="Delete" />
+        </div>
+      </div>
     </ContentDetail>
   );
 };
